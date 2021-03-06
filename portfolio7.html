@@ -1,0 +1,460 @@
+
+<html lang="en">
+    <head>
+    <title>Felix Immanuel: Portfolio | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+    
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+    
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+        
+        <!-- css files -->
+        <link href="portfoliobootstrap.css" rel="stylesheet" type="text/css"><!-- bootstrap css -->
+        <link href="portfoliostyle.css" rel="stylesheet" type="text/css"><!-- custom css -->
+        <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+        <!-- //css files -->
+        
+        <!-- google fonts -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+        <!-- //google fonts -->
+        
+    </head>
+    <body>
+    
+    <!-- header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="wthree-logo">
+                    <a href="index.html" id="logoLink"><i class="fa fa-adjust"></i> <span>F</span>elix</a>
+                </h1>
+    
+                <!-- menu -->
+                <!-- <ul id="menu">
+                    <li>
+                        <input id="check02" type="checkbox" name="menu">
+                        <label for="check02"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                        <ul class="submenu">
+                            
+                            <li><a href="#about">About Me</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact Me</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                <!-- //menu -->
+    
+            </div>
+        </nav>
+    </header>
+    <!-- //header -->
+    
+    <!-- banner -->
+    <div id="home" class="banner-w3pvt d-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 bnr-txt-w3pvt">
+                    <div class="wrapper">
+                        <header>
+                      
+                        </header>
+                <section>
+                    
+                        <h2 id="data-analyst-portfolio">Data Analyst Portfolio</h2>
+                    
+                    <hr>
+                    
+                    <h3 id="projects">Projects</h3><br>
+                
+                    <h4 id="1-adult-data-set-analysis-with-random-forest-ml-algorithm">1. Adult Data Set Analysis with Random Forest ML Algorithm</h4>
+                    
+                    <p>To analyze the adult data set, which has various parameters such as “Marital Status”, “Relationship”, “Occupation”, “Gender”, “Hours-per-week”, “Country”, “Income Category”.</p>
+                    
+                    <p><img src="images/adt1.png?raw=true"></p>
+                    
+                    <hr>
+                    <section>
+                        <section>
+
+                            <h2 id="adult-dataset--their-income-analysis">Adult Dataset &amp; their Income Analysis</h2>
+                      
+                      <p><strong>Project description:</strong></p>
+                      
+                      <p>The “Adult Dataset has around 32,000 records with various information like age, education, marital-status, occupation, gender, hours per week, country and income information”. From this dataset I have derived various insights and explained them below.</p>
+                      
+                      <h3 id="1-dataset-overview">1. Dataset Overview</h3>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+                        
+                          adt=pd.read_csv('adult.csv')
+                      adt.head()
+                      
+                          age         workclass  fnlwgt  ... hours-per-week  native-country income
+                      0   39         State-gov   77516  ...             40   United-States  &lt;=50K
+                      1   50  Self-emp-not-inc   83311  ...             13   United-States  &lt;=50K
+                      2   38           Private  215646  ...             40   United-States  &lt;=50K
+                      3   53           Private  234721  ...             40   United-States  &lt;=50K
+                      4   28           Private  338409  ...             40            Cuba  &lt;=50K
+                      
+                      </code></pre></div></div>
+                      
+                      <h3 id="2-checking-for-null-values-in-the-data">2. Checking for NULL values in the data</h3>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt.isnull().sum()
+                      
+                      age               0
+                      workclass         0
+                      fnlwgt            0
+                      education         0
+                      education-num     0
+                      marital-status    0
+                      occupation        0
+                      relationship      0
+                      race              0
+                      sex               0
+                      capital-gain      0
+                      capital-loss      0
+                      hours-per-week    0
+                      native-country    0
+                      income            0
+                      </code></pre></div></div>
+                      <p>No Null values in this dataset.</p>
+                      
+                      <h3 id="3-changing-the-column-names">3. Changing the column Names</h3>
+                      
+                      <p>Existing Column Values: 
+                      Index([‘age’, ‘workclass’, ‘fnlwgt’, ‘education’, ‘education-num’, ‘marital-status’, ‘occupation’, ‘relationship’, ‘race’, ‘sex’,
+                      capital-gain’, ‘capital-loss’, ‘hours-per-week’, ‘native-country’, ‘income’],dtype=’object’)</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt.rename(columns={'marital-status' : 'marital'}, inplace = True)
+                      adt.rename(columns={'capital-gain' : 'capgain'}, inplace = True)
+                      adt.rename(columns={'capital-loss' : 'caploss'}, inplace = True)
+                      adt.rename(columns={'hours-per-week' : 'hrsprwk'}, inplace = True)
+                      adt.rename(columns={'native-country' : 'country'}, inplace = True)
+                      </code></pre></div></div>
+                      <p>Corrected Column Values:
+                      Index([‘age’, ‘workclass’, ‘fnlwgt’, ‘education’, ‘education-num’, ‘marital’, ‘occupation’, ‘relationship’, ‘race’, ‘sex’, ‘capgain’, ‘caploss’, ‘hrsprwk’, ‘country’, ‘income’], dtype=’object’)</p>
+                      
+                      <h3 id="4-grouping-the-countries-into-region">4. Grouping the “Countries” into Region</h3>
+                      
+                      <p>There were 42 unique entries in the country column and around 583 entries where unknow.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['country'].value_counts()
+                      
+                      United-States                 29170
+                      Mexico                          643
+                      ?                               583
+                      Philippines                     198
+                      Germany                         137
+                      Canada                          121
+                      Puerto-Rico                     114
+                      El-Salvador                     106
+                      India                           100
+                      Cuba                             95
+                      England                          90
+                      Jamaica                          81
+                      South                            80
+                      China                            75
+                      Italy                            73
+                      Dominican-Republic               70
+                      Vietnam                          67
+                      Guatemala                        64
+                      Japan                            62
+                      Poland                           60
+                      Columbia                         59
+                      Taiwan                           51
+                      Haiti                            44
+                      Iran                             43
+                      Portugal                         37
+                      Nicaragua                        34
+                      Peru                             31
+                      Greece                           29
+                      France                           29
+                      Ecuador                          28
+                      Ireland                          24
+                      Hong                             20
+                      Trinadad&amp;Tobago                  19
+                      Cambodia                         19
+                      Thailand                         18
+                      Laos                             18
+                      Yugoslavia                       16
+                      Outlying-US(Guam-USVI-etc)       14
+                      Hungary                          13
+                      Honduras                         13
+                      Scotland                         12
+                      Holand-Netherlands                1
+                      Name: country, dtype: int64
+                      
+                      </code></pre></div></div>
+                      <p>Grouping all the countries into 4 regions (America, Asia, Europe, Others).</p>
+                      
+                      <p>Creating a new column</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['region']='Asia'
+                      </code></pre></div></div>
+                      <p>Grouping the countries</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['region'][adt['country'].isin(['United-States','Canada','Mexico','Puerto-Rico','El-Salvador','Jamaica','Guatemala','Columbia',
+                          'Nicaragua','Trinadad&amp;Tobago','Cambodia','Laos','Outlying-US(Guam-USVI-etc)','Honduras'])]='America'
+                      
+                      adt['region'][adt['country'].isin(['Germany','England','Italy','Dominican-Republic','Poland','Iran','Portugal','France','Greece',
+                          'Ecuador','Ireland','Scotland','Holand-Netherlands'])]='Europe'
+                      
+                      adt['region'][adt['country'].isin(['?',])]='Others'
+                      
+                      </code></pre></div></div>
+                      <p>Region Overview</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['region'].value_counts()
+                      
+                      America    30475
+                      Asia         870
+                      Europe       633
+                      Others       583
+                      Name: region, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <h3 id="5-grouping-the-education-entries-into-categories">5. Grouping the “Education Entries” into Categories</h3>
+                      
+                      <p>There were 16 unique entries in the education column.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['education'].value_counts()
+                      
+                      HS-grad         10501
+                      Some-college     7291
+                      Bachelors        5355
+                      Masters          1723
+                      Assoc-voc        1382
+                      11th             1175
+                      Assoc-acdm       1067
+                      10th              933
+                      7th-8th           646
+                      Prof-school       576
+                      9th               514
+                      12th              433
+                      Doctorate         413
+                      5th-6th           333
+                      1st-4th           168
+                      Preschool          51
+                      Name: education, dtype: int64
+                      </code></pre></div></div>
+                      <p>Grouping all the education into 3 categories (School, Graduate, Other Education)</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['edu_category']='School'
+                      adt['edu_category'][adt['education'].isin(['HS-grad','Some-college','Bachelors','Masters','Doctorate'])]='Graduate'
+                      adt['edu_category'][adt['education'].isin(['Assoc-voc','Assoc-acdm'])]='OthrEDU'
+                      </code></pre></div></div>
+                      
+                      <p>Education Category Overview</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['edu_category'].value_counts() 
+                      
+                      Graduate    25283
+                      School       4829
+                      OthrEDU      2449
+                      Name: edu, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <h3 id="6-grouping-the-occupation-into-job-categories">6. Grouping the “Occupation” into Job Categories</h3>
+                      
+                      <p>There were 15 unique entries in the occupation column.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['occupation'].value_counts()
+                       
+                      Prof-specialty       4140
+                      Craft-repair         4099
+                      Exec-managerial      4066
+                      Adm-clerical         3770
+                      Sales                3650
+                      Other-service        3295
+                      Machine-op-inspct    2002
+                      ?                    1843
+                      Transport-moving     1597
+                      Handlers-cleaners    1370
+                      Farming-fishing       994
+                      Tech-support          928
+                      Protective-serv       649
+                      Priv-house-serv       149
+                      Armed-Forces            9
+                      Name: occupation, dtype: int64
+                      </code></pre></div></div>
+                      <p>Grouping all the occupation into 2 categories (officeJobs, fieldJobs)</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['jobCategory']='officeJobs'
+                      adt['jobCategory'][adt['occupation'].isin(['Craft-repair','Sales','Transport-moving','Handlers-cleaners','Farming-fishing'])]='fieldJobs'
+                      </code></pre></div></div>
+                      <p>Job Category Overview</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt['jobCategory'].value_counts()
+                       
+                      officeJobs    20851
+                      fieldJobs     11710
+                      Name: occu, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <h3 id="7-processing-hours-per-week-column">7. Processing “Hours-per-week” Column</h3>
+                      
+                      <p>Checking for <strong>Outliers</strong> in the “Hours-per-week” Column.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plt.boxplot(adt['hrsprwk'])
+                      </code></pre></div></div>
+                      <p><img src="images/hrsprwk_outliers.png?raw=true"></p>
+                      
+                      <p>Treating the <strong>Outliers</strong></p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>p25=adt['hrsprwk'].quantile(.25)
+                      p75=adt['hrsprwk'].quantile(.75)
+                      
+                      iqr=p75-p25
+                      
+                      lowerrange=p25-(1.5*iqr)
+                      upperrange=p75+(1.5*iqr)
+                      
+                      adt['hrsprwk'][adt['hrsprwk']&lt;lowerrange]=np.nan
+                      adt['hrsprwk'][adt['hrsprwk']&gt;upperrange]=np.nan
+                      
+                      adt['hrsprwk'].isnull().sum()
+                      adt['hrsprwk'].fillna(0,inplace=True)
+                      </code></pre></div></div>
+                      <p>After treating the <strong>Outliers</strong>.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plt.boxplot(adt['hrsprwk'])
+                      </code></pre></div></div>
+                      <p><img src="images/hrsprwk_outliers_treated.png?raw=true"></p>
+                      
+                      <h3 id="8-getting-dummies-from-the-newly-created-column-for-random-forest-ml-algorithm">8. Getting Dummies from the newly created column for “Random Forest ML Algorithm”</h3>
+                      
+                      <p>Getting dummies for “Region”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r=pd.get_dummies(adt['region'])
+                      adt=pd.concat([adt,r], axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Gender”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s=pd.get_dummies(adt['sex'])
+                      adt=pd.concat([adt,s], axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Education Category”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e=pd.get_dummies(adt['edu_category'])
+                      adt=pd.concat([adt,e],axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Gender Category”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>o=pd.get_dummies(adt['jobCategory'])
+                      adt=pd.concat([adt,o],axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Workclass”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wk=pd.get_dummies(adt['workclass'])
+                      adt=pd.concat([adt,wk],axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Marital Status”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ma=pd.get_dummies(adt['marital'])
+                      adt=pd.concat([adt,ma],axis=1)
+                      </code></pre></div></div>
+                      <p>Getting dummies for “Family Relationship Status”.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>re=pd.get_dummies(adt['relationship'])
+                      adt=pd.concat([adt,re],axis=1)
+                      </code></pre></div></div>
+                      <p>Columns list <strong>before</strong> getting dummies</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt.columns
+                      
+                      Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income'], dtype='object')
+                      </code></pre></div></div>
+                      
+                      <p>Columns list <strong>after</strong> getting dummies</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adt.columns
+                      Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital', 'occupation', 'relationship', 'race', 'sex', 'capgain', 'caploss', 'hrsprwk', 'country', 'income', 'region', 'Female', 'Male', 'edu', 'occu', 'Graduate', 'OthrEDU', 'school', 'fieldJobs', 'officeJobs', 'America', 'Europe', 'Others', 'asia', 'Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Without-pay', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married',
+                      'Separated', 'Widowed', 'Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried', 'Wife'], dtype='object')
+                      </code></pre></div></div>
+                      <h3 id="9-dataset-insights">9. Dataset Insights</h3>
+                      
+                      <p>The below insights are about the people who earn more according to each category.</p>
+                      
+                      <p><strong>1. Income comparison according to a “Region”</strong></p>
+                      
+                      <p>People who lives in the American region earns more than any other people in the world.</p>
+                      
+                      <p><img src="images/Region_Wise_Income.png?raw=true"></p>
+                      
+                      <p><strong>2. Income comparison of an individual according to his “Family Status”</strong></p>
+                      
+                      <p>The Person who is <em>not in a family</em> earns more money than any other category and in a family <em>Husbands</em> earn more than all.</p>
+                      
+                      <p><img src="images/Family_Status.png?raw=true"></p>
+                      
+                      <p><strong>3. Income comparison according to an individuals “Marital Status”</strong></p>
+                      
+                      <p>People who is <em>not married</em> earns more than any other marital status.</p>
+                      
+                      <p><img src="images/Relationship_Status.png?raw=true"></p>
+                      
+                      <p><strong>4. Income comparison according to the “Job Sector”</strong></p>
+                      
+                      <p>People who work in the <em>private sector</em> earns more than the people who works in the government &amp; other areas.</p>
+                      
+                      <p><img src="images/Area_of_Work.png?raw=true"></p>
+                      
+                      <p><strong>5. Income comparison as per “Job”</strong></p>
+                      
+                      <p>People who are working in <em>professional office jobs</em> earn more than the people who work in field jobs.</p>
+                      
+                      <p><img src="images/Job_Wise_Income.png?raw=true"></p>
+                      
+                      <p><strong>6. Income comparison as per the “Education”</strong></p>
+                      
+                      <p>Graduates earn more than the people who didn’t complete graduation.</p>
+                      
+                      <p><img src="images/Education_Wise_Income.png?raw=true"></p>
+                      
+                      <h3 id="10-building-model-random-forest--ml-algorithm">10. Building Model <em>(Random Forest  ML Algorithm)</em></h3>
+                      
+                      <p><strong>1. Importing the dataset</strong></p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X = adt[['Female','America','Europe','asia','Federal-gov', 'Local-gov', 'Never-worked', 'Private', 'Self-emp-inc', 'Self-emp-not-inc', 'State-gov', 'Divorced', 'Married-AF-spouse', 'Married-civ-spouse', 'Married-spouse-absent', 'Never-married', 'Separated','Husband', 'Not-in-family', 'Other-relative', 'Own-child', 'Unmarried']]
+                      
+                      y = adt[['income']]
+                      </code></pre></div></div>
+                      <p><strong>2. Splitting the dataset into the Training set and Test set</strong></p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from sklearn.model_selection import train_test_split
+                      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+                      </code></pre></div></div>
+                      <p><strong>3. Fitting Random Forest to the Training set</strong></p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from sklearn.ensemble import RandomForestClassifier
+                      classifier=RandomForestClassifier()
+                      classifier.fit(X_train,y_train)
+                      </code></pre></div></div>
+                      <p><strong>4. Predicting the Test set results</strong></p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>y_pred = classifier.predict(X_test)
+                      </code></pre></div></div>
+                      <p><strong>5. Prediction Accuracy</strong></p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("The train accuracy " , classifier.score(X_train,y_train)*100)
+                      print("The test accuracy " , classifier.score(X_test,y_test)*100)
+                      </code></pre></div></div>
+                      <p>The train accuracy <strong>98.29</strong><br>
+                      The test accuracy <strong>81.88</strong></p>
+                      
+                      
+                      
+                            </section>
+                    </section>
+                    
+                        </section>
+                        <footer>
+                          
+                          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+                        </footer>
+                      </div>
+                      <script src="/assets/js/scale.fix.js"></script>
+                      
+                      <script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                        ga('create', 'UA-000000-0', 'auto');
+                        ga('send', 'pageview');
+                      </script>
+                      
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>

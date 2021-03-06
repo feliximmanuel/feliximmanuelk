@@ -1,0 +1,445 @@
+
+<html lang="en">
+    <head>
+    <title>Felix Immanuel: Portfolio | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
+    
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+    
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+        
+        <!-- css files -->
+        <link href="portfoliobootstrap.css" rel="stylesheet" type="text/css"><!-- bootstrap css -->
+        <link href="portfoliostyle.css" rel="stylesheet" type="text/css"><!-- custom css -->
+        <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+        <!-- //css files -->
+        
+        <!-- google fonts -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+        <!-- //google fonts -->
+        
+    </head>
+    <body>
+    
+    <!-- header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1 class="wthree-logo">
+                    <a href="index.html" id="logoLink"><i class="fa fa-adjust"></i> <span>F</span>elix</a>
+                </h1>
+    
+                <!-- menu -->
+                <!-- <ul id="menu">
+                    <li>
+                        <input id="check02" type="checkbox" name="menu">
+                        <label for="check02"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                        <ul class="submenu">
+                            
+                            <li><a href="#about">About Me</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact Me</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+                <!-- //menu -->
+    
+            </div>
+        </nav>
+    </header>
+    <!-- //header -->
+    
+    <!-- banner -->
+    <div id="home" class="banner-w3pvt d-flex">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 bnr-txt-w3pvt">
+                    <div class="wrapper">
+                        <header>
+                      
+                        </header>
+                <section>
+                    
+                        <h2 id="data-analyst-portfolio">Data Analyst Portfolio</h2>
+                    
+                    <hr>
+                    
+                    <h3 id="projects">Projects</h3><br>
+                
+                    <h4 id="2-kaaglecom---titanic-machine-learning-from-disaster-competition">2. Kaagle.com - Titanic: Machine Learning from Disaster Competition</h4>
+
+                    <p>This is the legendary Titanic ML competition by “Kaagle.com”– the best, first challenge for us to dive into ML competitions and familiarize ourself with how the Kaggle platform works.</p>
+                    
+                    <p><img src="images/titanic_cover.jpeg?raw=true"></p>
+                    <hr>
+                    <section>
+                        <section>
+
+                            <h2 id="kaaglecom---titanic-machine-learning-competition">Kaagle.com - Titanic: Machine Learning Competition</h2>
+                      
+                      <p><strong>Project description:</strong></p>
+                      
+                      <p>This is the legendary Titanic ML competition from <em>Kaagle.com</em> – the challenge was to dive into ML competitions and familiarize myself with how the Kaggle platform works. <br><br>
+                      <em>The competition is to: use machine learning to create a model that predicts which passengers survived the Titanic shipwreck.</em>
+                      <br><br>
+                      The data has been split into two groups:</p>
+                      <ol>
+                        <li>Training set</li>
+                        <li>Test set</li>
+                      </ol>
+                      
+                      <h3 id="1-dataset-overview">1. Dataset Overview</h3>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit.head()
+                      
+                         PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked
+                      0            1         0       3  ...   7.2500   NaN         S
+                      1            2         1       1  ...  71.2833   C85         C
+                      2            3         1       3  ...   7.9250   NaN         S
+                      3            4         1       1  ...  53.1000  C123         S
+                      4            5         0       3  ...   8.0500   NaN         S
+                      </code></pre></div></div>
+                      
+                      <h3 id="2-checking-for-null-values-in-the-dataset">2. Checking for NULL Values in the dataset</h3>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit.isnull().sum()
+                      
+                      PassengerId      0
+                      Survived         0
+                      Pclass           0
+                      Name             0
+                      Sex              0
+                      Age            177
+                      SibSp            0
+                      Parch            0
+                      Ticket           0
+                      Fare             0
+                      Cabin          687
+                      Embarked         2
+                      dtype: int64
+                      </code></pre></div></div>
+                      <p>Treating the NULL Values.</p>
+                      
+                      <p>Replacing the NULL values in the “Age” column with the <strong>average age</strong> of people in the ship</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['Age']=tit['Age'].fillna(tit.Age.mean())
+                      </code></pre></div></div>
+                      <p>Replacing the NULL values in the “Embarked” column with the value <strong>C</strong>.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Filtering the NULL Values - tit[tit['Embarked'].isnull()]
+                      
+                           PassengerId  Survived  Pclass  ...  Fare Cabin  Embarked
+                      61            62         1       1  ...  80.0   B28       NaN
+                      829          830         1       1  ...  80.0   B28       NaN
+                      
+                      (Port of Embarkation) tit['Embarked'].fillna('C',inplace=True) 
+                      </code></pre></div></div>
+                      <p>Replacing the NULL values in the “Cabin” column with <strong>OT (Others)</strong></p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['Cabin'].fillna('OT',inplace=True)
+                      </code></pre></div></div>
+                      <p>All the NULL values are treated.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit.isnull().sum()
+                      
+                      PassengerId    0
+                      Survived       0
+                      Pclass         0
+                      Name           0
+                      Sex            0
+                      Age            0
+                      SibSp          0
+                      Parch          0
+                      Ticket         0
+                      Fare           0
+                      Cabin          0
+                      Embarked       0
+                      dtype: int64
+                      </code></pre></div></div>
+                      
+                      <h3 id="3-cabin-columns-analysis">3. <em>Cabin</em> Columns Analysis</h3>
+                      
+                      <p>Changing the values in the cabin column to an understandable format. Getting the first letter of the values and saving it in a new column.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['Cabin'].value_counts()
+                      
+                      OT             687
+                      B96 B98          4
+                      C23 C25 C27      4
+                      G6               4
+                      D                3
+                      C49              1
+                      B73              1
+                      B39              1
+                      C99              1
+                      C103             1
+                      Name: Cabin, Length: 148, dtype: int64
+                      
+                      Creating a new column.
+                      tit['cab']=tit['Cabin'].map(lambda x: x[0])
+                      
+                      tit['cab'].value_counts()
+                      
+                      O    687
+                      C     59
+                      B     47
+                      D     33
+                      E     32
+                      A     15
+                      F     13
+                      G      4
+                      T      1
+                      Name: cab, dtype: int64
+                      </code></pre></div></div>
+                      <p>Converting the Cabin information to reserved &amp; un-reserved.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creating a new column.
+                      tit['cabstatus']='Reserved'
+                      tit['cabstatus'][tit['cab'].isin(['O'])]='UnReserved'
+                      
+                      tit['cabstatus'].value_counts()
+                      
+                      UnReserved    687
+                      Reserved      204
+                      Name: cabstatus, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <ol>
+                        <li>Combining (Siblings, Spouses) &amp; (Parents, Children) Travelled into a single column.</li>
+                      </ol>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['SC']=tit['SibSp']+tit['Parch']
+                      tit['SC']
+                      
+                      0      1
+                      1      1
+                      2      0
+                      3      1
+                      4      0
+                            ..
+                      886    0
+                      887    0
+                      888    3
+                      889    0
+                      890    0
+                      Name: SC, Length: 891, dtype: int64
+                      </code></pre></div></div>
+                      <p>Now converting the information into 2 groups, People travelled alone &amp; People travelled as Group.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['boarding']=np.where(tit['SC']==0,'Alone','Group')
+                      
+                      tit['boarding'].value_counts()
+                      Alone    537
+                      Group    354
+                      Name: boarding, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <h3 id="4-name-column-processing">4. “Name” column processing</h3>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['Name'].head()
+                      
+                      0                              Braund, Mr. Owen Harris
+                      1    Cumings, Mrs. John Bradley (Florence Briggs Th...
+                      2                               Heikkinen, Miss. Laina
+                      3         Futrelle, Mrs. Jacques Heath (Lily May Peel)
+                      4                             Allen, Mr. William Henry
+                      Name: Name, dtype: object
+                      </code></pre></div></div>
+                      <p>Splitting the “Prefix” from the name and saving it into a new column.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['prefix']=tit['Name'].map(lambda x:x.split(',')[1].split('.')[0].strip())
+                      </code></pre></div></div>
+                      
+                      <p>Now splitting the children (Prefix = Master, Miss) from the Name column.</p>
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tit['children']='adt'
+                      tit['children'][(tit['prefix'].isin(['Master']))|(tit['Age']&lt;15)]='child'
+                      tit['children'][(tit['prefix'].isin(['Miss']))&amp;(tit['Age']&lt;15)]='child'
+                      
+                      Filtering the age data in which the null values in the age column was earlier replaced with "Average Age" in ship with children who are 15 or less.
+                      tit['children'][(tit['Age']==29.699118) &amp; (tit['prefix']=='Miss')]='child'
+                      tit['children'][(tit['Age']==29.699118) &amp; (tit['prefix']=='Master')]='child'
+                      
+                      tit['children'].value_counts()
+                      adt      808
+                      child     83
+                      Name: children, dtype: int64
+                      </code></pre></div></div>
+                      
+                      <p>Children are more likely to survive the trip than other category. More than 50% of the children survived.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pd.crosstab(tit['children'],tit['Survived'])
+                      
+                      Survived    0    1
+                      children          
+                      adt       514  294
+                      child      35   48
+                      </code></pre></div></div>
+                      
+                      <h3 id="5-getting-dummies-from-the-newly-created-column-for-ml-algorithms">5. Getting Dummies from the newly created column for “ML Algorithms”</h3>
+                      
+                      <p>Getting dummies for “Embarked (Port of Embarkation)”.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e=pd.get_dummies(tit['Embarked'])
+                      tit=pd.concat([tit,e],axis=1)
+                      </code></pre></div></div>
+                      
+                      <p>Getting dummies for “Gender”.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s=pd.get_dummies(tit['Sex'])
+                      tit=pd.concat([tit,s], axis=1)
+                      </code></pre></div></div>
+                      
+                      <p>Getting dummies for “Cabin (Reserved or Un-Reserved)”</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c=pd.get_dummies(tit['cabstatus'])
+                      tit=pd.concat([tit,c],axis=1)
+                      </code></pre></div></div>
+                      
+                      <p>Getting dummies for “People Boarded (Alone or Group)”</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bo=pd.get_dummies(tit['boarding'])
+                      tit=pd.concat([tit,bo],axis=1)
+                      </code></pre></div></div>
+                      
+                      <p>Getting dummies for “Children”</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ch=pd.get_dummies(tit['children'])
+                      tit=pd.concat([tit,ch],axis=1)
+                      </code></pre></div></div>
+                      <h3 id="i-repeated-the-same-exploratory-data-analysis-for-the-test-data-set-and-determined-the-x--y-values-now-everything-was-ready-to-run-the-machine-learning-algorithms-and-check-my-score-in-kaagle-for-which-i-was-exicted">I repeated the same Exploratory Data Analysis for the “Test Data Set” and determined the X &amp; Y Values. Now everything was ready to run the Machine Learning Algorithms and check my score in Kaagle for which I was exicted.</h3>
+                      
+                      <h3 id="imported-the-data-set">Imported the Data Set.</h3>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X=tit[['Age','Pclass','male','Alone','C','Q','Reserved','child']]
+                      y=tit[['Survived']]
+                      </code></pre></div></div>
+                      
+                      <h3 id="svc-machine-learning-algorithm">SVC Machine Learning Algorithm</h3>
+                      
+                      <p>First I tried with the SVC Machine Learning Algoritm.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#Splitting the dataset into the Training set and Test set
+                      from sklearn.model_selection import train_test_split
+                      X_train,X_test,y_train,y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+                      
+                      #Fitting SVC to the Training set
+                      from sklearn.svm import SVC
+                      model_svc = SVC(C=1,kernel = 'rbf', random_state = 0)
+                      model_svc.fit(X_train, y_train)
+                      
+                      # Predicting the Test set results
+                      pred=model_svc.predict(X_test)
+                      
+                      # Prediction Accuracy
+                      print("The train accuracy " , model_svc.score(X_train,y_train)*100)
+                      print("The test accuracy " ,model_svc.score(X_test,y_test)*100)
+                      
+                      The train accuracy  82.16
+                      The test accuracy  80.44
+                      
+                      #Persist a model
+                      from sklearn.externals import joblib
+                      joblib.dump(model_svc, 'titanic.joblib')
+                      </code></pre></div></div>
+                      
+                      <p>Applying the SVC Algorithm to the Test Data Set.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>te=tac[['Pclass','male','Alone','C','Q','Reserved',True]]
+                      from sklearn.externals import joblib
+                      tests=joblib.load('titanic.joblib')
+                      pred=tests.predict(te)
+                      tac['Survived']=pred
+                      output=tac[['PassengerId','Survived']]
+                      
+                      Saving the output into an excel sheet.
+                      output.to_csv("E:\Data Science\Data\TitanicResult.csv", index=False)
+                      </code></pre></div></div>
+                      <p>Here is my test result of SVC Algorithm</p>
+                      
+                      <p><img src="images/Logistic_Result.png?raw=true"></p>
+                      
+                      <h3 id="test-results-on-other-algorithms">Test Results on other Algorithms</h3>
+                      
+                      <p>After trying various algorithms, my wasn’t improved.</p>
+                      
+                      <p><img src="images/Othr_Algorithms.png?raw=true"></p>
+                      
+                      <h3 id="atlast-i-tried-random-forest-algorithm">Atlast I Tried Random Forest Algorithm</h3>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from sklearn.model_selection import train_test_split
+                      X_train,X_test,y_train,y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+                      
+                      # Fitting Random Forest Classification to the Training set
+                      from sklearn.ensemble import RandomForestClassifier
+                      ranfor = RandomForestClassifier(n_estimators = 50, criterion = 'gini', random_state = 0)
+                      ranfor.fit(X_train, y_train)
+                      
+                      # Predicting the Test set results
+                      y_pred = ranfor.predict(X_test)
+                      
+                      print("The train accuracy " ,ranfor.score(X_train,y_train)*100)
+                      print("The test accuracy " ,ranfor.score(X_test,y_test)*100)
+                      
+                      The train accuracy  93.18
+                      The test accuracy  78.21
+                      
+                      #Persist a model
+                      from sklearn.externals import joblib
+                      joblib.dump(ranfor, 'titRF.joblib')
+                      </code></pre></div></div>
+                      
+                      <p>Applying the Random Forest Algorithm to the Test Data Set.</p>
+                      
+                      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from sklearn.externals import joblib
+                      ranforest=joblib.load('titRF.joblib')
+                      pre=ranforest.predict(te)
+                      tac['Survived']=pre
+                      output=tac[['PassengerId','Survived']]
+                      
+                      Saving the output into an excel sheet.
+                      output.to_csv("E:\Data Science\Data\RandomForestResult.csv", index=False)
+                      </code></pre></div></div>
+                      <p>Atlast my score was little bit improved.</p>
+                      
+                      <p><img src="images/Ranfor_Result.png?raw=true"></p>
+                      
+                      <p>Still i’m analyzing and trying to improve my score!!!</p>
+                      
+                      
+                      
+                            </section>
+                    </section>
+                    
+                        </section>
+                        <footer>
+                          
+                          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+                        </footer>
+                      </div>
+                      <script src="/assets/js/scale.fix.js"></script>
+                      
+                      <script>
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                        ga('create', 'UA-000000-0', 'auto');
+                        ga('send', 'pageview');
+                      </script>
+                      
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>

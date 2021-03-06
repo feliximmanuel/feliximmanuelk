@@ -1,0 +1,318 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+html,
+body {
+    margin: 0;
+    font-size: 100%;
+    background: #fff;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body a {
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+body img {
+    max-width: 100%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="search"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0;
+    line-height: 2em;
+    letter-spacing: 1px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*--/navbar--*/
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+}
+
+/* menu */
+ul#menu {
+    position: absolute;
+    /* top: 2%; */
+    /* width: 3em; */
+    /* height: 3em; */
+    margin: 0;
+    /* background: rgba(21, 30, 37, 0.32); */
+    color: rgb(14, 13, 13);
+    z-index: 99;
+    right: 14%;
+    font-size: 29px;
+}
+
+ul#menu>li {
+    float: left;
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+}
+
+ul#menu label {
+    position: relative;
+    display: block;
+    transition: background 0.3s;
+    cursor: pointer;
+    text-align: center;
+    margin: 0;
+}
+
+ul#menu label span {
+    line-height: 1em;
+}
+
+ul#menu input {
+    display: none
+}
+
+/*show the second levele menu of the selected voice*/
+
+ul#menu input:checked~ul.submenu {
+    max-height: 360px;
+    transition: max-height 0.5s ease-in;
+}
+
+/*style for the second level menu*/
+
+ul.submenu {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background: #f7f7f7;
+    transition: max-height 0.5s ease-out;
+    position: absolute;
+    min-width: 8em;
+    right: 0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    box-shadow: 0 1px 8px rgba(20, 21, 21, 0.37);
+    -webkit-box-shadow: 0 1px 8px rgba(20, 21, 21, 0.37);
+    -moz-box-shadow: 0 1px 8px rgba(20, 21, 21, 0.37);
+}
+
+ul.submenu li a {
+    display: block;
+    padding: 9px;
+    color: #000;
+    text-align: center;
+	text-transform: uppercase;
+    color: #3b5fa1;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+ul.submenu li a:hover,
+ul.submenu li a.active {
+    color: #2a5298;
+}
+
+/* //menu */
+.navbar {
+	padding: 1em 2em;
+	border-bottom: 1px solid rgba(7, 7, 7, 0.41);
+}
+
+h1.wthree-logo a {
+	text-transform: capitalize;
+	font-size: 0.9em;
+	font-weight: 400;
+	color: rgb(22, 21, 21);
+}
+
+h1.wthree-logo a span {
+	font-weight: 800;
+}
+
+a.scroll.bnr-btn{
+    background: #fff;
+    border: 2px solid #fff;
+    text-transform: capitalize;
+    color: #2a5298;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 2em;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+a.scroll.bnr-btn1 {
+    background: transparent;
+    border: 2px solid #fff;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 2em;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+a.scroll.bnr-btn i{
+    vertical-align: middle;
+}
+
+
+.bnr-w3pvt-txt {
+	margin-left: 0em;
+}
+
+/* banner */
+
+.banner-w3pvt {
+	background: url(../images/banner.jpg) no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+
+.bnr-txt-w3pvt {
+    margin: 12em 0 9em;
+}
+.banner-w3pvt:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	background-size: cover;
+	opacity: 0.9;
+	background: #1e3c72;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #2a5298, rgba(30, 60, 114, 0.59));  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f2f3f5, rgba(235, 240, 245, 0.986)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.bnr-w3pvt-txt h2 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+}
+.bnr-w3pvt-txt p {
+    color: #eee;
+}
+
+.bnr-w3pvt-txt h6 {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.bnr-w3pvt-txt h6:after {
+    position: absolute;
+    content: '';
+    width: 8%;
+	height: 1px;
+    background: #fff;
+    left: 0;
+	bottom: -70%
+}
+.bnr-w3pvt-txt h2 span{
+}
+.bnr-w3pvt-txt h4 {
+    text-transform: capitalize;
+    color: #eee;
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+ul.social_section_1info li {
+    display: inline-block;
+}
+ul.social_section_1info a {
+    margin-right: 4px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: #3b5fa1;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+ul.social_section_1info a span.fa {
+    color: #fff;
+    font-size: 13.5px;
+    line-height: 40px;
+}
+/* //banner */
+
+.fa-linkedin:before {
+    content: "\f0e1";
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+fa-navicon:before, .fa-reorder:before, span.fa.fa-bars:before {
+    content: "\f0c9";
+}
